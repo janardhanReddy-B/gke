@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     name: app-demo
-  type: LoadBlancer
+  type: LoadBalancer
   ports:
   - name: http
     port: 80
