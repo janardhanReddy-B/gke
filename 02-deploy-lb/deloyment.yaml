@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-demo
+  name: myapp-demo
 spec:
   replicas: 2
   selector:
@@ -9,12 +9,11 @@ spec:
       app: app1
   template:
     metadata:
-      name: app-demo
       labels:
         app: app1
     spec:
       containers:
-      - name: app1
+      - name: myapp1
         image: us-docker.pkg.dev/google-samples/containers/gke/hello-app:1.0
         ports:
         - containerPort: 8080
