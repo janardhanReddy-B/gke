@@ -4,7 +4,7 @@ metadata:
   name: lb-app1
 spec:
   selector:
-    name: app-demo
+    app: app1
   type: LoadBalancer
   ports:
   - name: http
