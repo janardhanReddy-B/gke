@@ -8,7 +8,7 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: rs-app
+      app: rs-1
   template:
     metadata:
       name: rs-1
