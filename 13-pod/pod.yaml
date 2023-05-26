@@ -9,7 +9,7 @@ spec:
   - name: nginx
     image: nginx
     ports:
-    - containerPort: 8080
+    - containerPort: 80
 
 ---
 
@@ -22,6 +22,6 @@ spec:
   selector:
     app: my-pod
   ports:
-  - targetPort: 8080
+  - targetPort: 80
     port: 80
 
