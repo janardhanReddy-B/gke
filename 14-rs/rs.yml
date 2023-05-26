@@ -30,7 +30,7 @@ metadata:
   name: lb-for-rs
 spec:
   selector:
-    app: rs-app
+    app: rs-1
   type: LoadBalancer
   ports:
   - port: 80
