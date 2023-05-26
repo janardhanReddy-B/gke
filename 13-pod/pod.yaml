@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+  labels:
+    app: my-pod
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    ports:
+    - containerPort: 8080
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-svc
+spec:
+  type: LoadBalancer
+  selector:
+    app: my-pod
+  ports:
+  - targetPort: 8080
+    port: 80
+
