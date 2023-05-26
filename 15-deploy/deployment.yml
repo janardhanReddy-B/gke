@@ -1,22 +1,21 @@
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata:
-  name: rs-1
+  name: my-app
   labels:
-    app: rs-1
+    app: app-nginx
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: rs-1
+      app: app-nginx
   template:
     metadata:
-      name: rs-1
       labels:
-        app: rs-1
+        app: app-nginx
     spec:
       containers:
-      - name: rs-app
+      - name: nginx
         image: nginx
         ports:
         - containerPort: 80
@@ -25,11 +24,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: lb-for-rs
+  name: lb-deploy
 spec:
   selector:
-    app: rs-1
+    app: app-nginx
   type: LoadBalancer
   ports:
   - port: 80
     targetPort: 80
+
