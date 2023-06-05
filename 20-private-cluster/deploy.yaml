@@ -10,8 +10,8 @@ spec:
   template:
     metadata:
       labels:
-        app: stacksimplify/kubenginx:1.0.0
+        app: nginx-private
     spec:
        containers:
           - name: nginx
-            image: nginx
+            image: stacksimplify/kubenginx:1.0.0
