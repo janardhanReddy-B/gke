@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       labels:
-        app: nginx-private
+        app: stacksimplify/kubenginx:1.0.0
     spec:
        containers:
           - name: nginx
