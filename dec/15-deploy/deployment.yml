@@ -1,24 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app
+  name: red
   labels:
-    app: app-nginx
+    name: red
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: app-nginx
+      name: red
   template:
     metadata:
       labels:
-        app: app-nginx
+        name: red
     spec:
       containers:
-      - name: nginx
-        image: nginx
-        ports:
-        - containerPort: 80
+        - name: red
+          image: nginx
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+                - key: node-role.kubernetes.io/control-plane
+                  operator: Exists
+
+
 
 
 
